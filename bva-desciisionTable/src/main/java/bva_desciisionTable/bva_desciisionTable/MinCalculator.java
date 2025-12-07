@@ -16,12 +16,12 @@ public class MinCalculator {
 
     // ✘ שגיאה 3: c נותן תחום קטן מדי (1–999 בלבד)
     private static boolean isOutOfRangeC(int x) {
-        return (x < 1 || x > 999);
+        return (x < 1 || x > 1000);
     }
 
     // ✘ שגיאה 4: d מרשה ערך 0 בטעות
     private static boolean isOutOfRangeD(int x) {
-        return (x < 0 || x > 1000);
+        return (x < 1 || x > 1000);
     }
 
     // משתנה e ללא שגיאה — תקין

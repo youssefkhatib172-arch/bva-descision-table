@@ -4,17 +4,34 @@ import org.junit.jupiter.api.Test;
 
 public class MinCalculatorTest {
     
-    @Test
-    public void testA_LowerBoundaryShouldBeValid() {
-        assertDoesNotThrow(() ->
-            MinCalculator.findMin(1, 500, 500, 500, 500)
-        );
-    }
+	 @Test
+	    void testAIsZero_shouldThrowException() {
+	        // arrange
+	        int a = 0;   // ערך לא חוקי
+	        int b = 50;
+	        int c = 50;
+	        int d = 50;
+	        int e = 50;
 
-    @Test
-    public void testB_UpperBoundary1000ShouldBeValid() {
-        assertDoesNotThrow(() ->
-            MinCalculator.findMin(500, 1000, 500, 500, 500)
-        );
-    }
+	        // act + assert
+	        assertThrows(IllegalArgumentException.class, () -> {
+	        	MinCalculator.findMin(a, b, c, d, e);
+	        });
+	    }
+
+	 @Test
+	    void testAIsOne_shouldReturnMinimum() {
+	        // arrange
+	        int a = 10;    // ערך גבול תקין
+	        int b = 50;
+	        int c = 50;
+	        int d = 50;
+	        int e = 50;
+
+	        // act
+	        int result = MinCalculator.findMin(a, b, c, d, e);
+
+	        // assert
+	        assertEquals(10, result);   // 1 הוא הערך המינימלי
+	    }
 }
